@@ -117,4 +117,4 @@ T^{-1} \dot{x} = T^{-1}Ax = \Lambda T^{-1} x \\
     \end{array}
 \right]
 $$
-ここで$z_1 = x_G - \dot{x_G}/\omega$は不安定モード，$z_2 = x_G + \dot{x_G}/\omega$は安定モードを示す．
+ここで$z_1 = x_G - \frac{\dot{x_G}}{\omega}$は不安定モード，$z_2 = x_G + \frac{\dot{x_G}}{\omega}$は安定モードを示す．
