@@ -64,10 +64,10 @@ $$
 
 固有値は$\lambda = \omega, -\omega$で固有ベクトルは
 
-$\lambda = -\omega < 0$ のとき（不安定モード）
+$\lambda = -\omega < 0$ のとき（安定モード）
 $$a_1 = [1, -\omega]^T$$
 
-$\lambda = \omega > 0$ のとき（安定モード）
+$\lambda = \omega > 0$ のとき（不安定モード）
 $$a_2 = [1, \omega]^T$$
 
 行列$A$の固有値分解は
@@ -118,4 +118,4 @@ T^{-1} \dot{x} = T^{-1}Ax = \Lambda T^{-1} x \\
     \end{array}
 \right]
 $$
-ここで$z_1 = x_G - \frac{\dot{x_G}}{\omega}$は不安定モード，$z_2 = x_G + \frac{\dot{x_G}}{\omega}$は安定モードを示す．
+ここで$z_1 = x_G - \frac{\dot{x_G}}{\omega}$は安定モード，$z_2 = x_G + \frac{\dot{x_G}}{\omega}$は不安定モードを示す．
