@@ -1,34 +1,41 @@
 ###### tags: `humanoid` `robotics` 
 # 線形倒立振子
 
-## 線形倒立振子の運動方程式
+## 倒立振子モデル
 
-地面にfree jointで固定された長さ$h$の棒に質点(重さ:$m$)倒立振子を考える(簡単のため同一平面上を動く時を考える). 振子の傾きを$\theta$として，倒立振子の運動方程式は，
-
-$$
-(m h^2)\ddot{\theta} = mg \sin\theta \ h
-$$
-
-$0 \simeq \theta$のとき，$\sin\theta \simeq \theta$とすることができるので
+地面に自由関節で固定された長さ$l$の棒に質点(重さ:$m$)倒立振子を考える(簡単のため同一平面上を動く時を考える). 振子の傾きを$\theta$として，倒立振子の運動方程式は，
 
 $$
-\ddot{\theta} = \omega^2 \sin\theta \quad  \omega := \sqrt{\frac{g}{h}}\tag{1}
+(m l^2)\ddot{\theta} = mg \sin\theta \ l
 $$
 
-重心位置$x_G$として，$x_G = h \sin\theta \simeq h\theta$なので(1)式は
+$0 \simeq \theta$のとき$\sin\theta \simeq \theta$となり，
 
 $$
-\ddot{x_G} = \omega x_G \tag{2}
+\ddot{\theta} = \omega^2 \theta \quad  \omega := \sqrt{\frac{g}{l}}\tag{1}
 $$
-となり線形倒立振り子の運動方程式が求まる.
-状態変数$x = [x_G \dot{x_G}]^T$として状態方程式は
+
+
+質点の水平方向の位置を$x$として，$x = l \sin\theta \simeq l\theta$ なので(1)式より
+
+$$
+\ddot{x} = \omega^2 x \tag{2}
+$$
+と質点の水平運動を表す微分方程式が与えられる.(2)式の解は$x(0)=x_0$，$\dot{x}(0)=\dot{x}_0$として
+
+$$ 
+x(t) = \frac{1}{2}(x_0 + \frac{\dot{x}_0}{\omega}) e^{\omega t} + \frac{1}{2}(x_0 - \frac{\dot{x}_0}{\omega}) e^{-\omega t} \\
+ = x_0 {\rm cosh}(\omega t) + \frac{\dot{x}_0}{\omega} {\rm sinh}(\omega t)
+$$
+
+状態変数$x = [x \  \dot{x}]^T$として状態方程式は
 
 $$
 \dot{x} =
 \left[
     \begin{array}{cc}
-    \dot{x_G} \\
-    \ddot{x_G} \\
+    \dot{x} \\
+    \ddot{x} \\
     \end{array}
 \right] =
 \left[
@@ -39,14 +46,14 @@ $$
 \right]
 \left[
     \begin{array}{cc}
-    x_G \\
-    \dot{x_G} \\
+    x \\
+    \dot{x} \\
     \end{array}
 \right] =
 Ax \tag{3}
 $$
 
-## 運動方程式の解析
+## モデルの解析
 
 状態遷移行列$A$の固有値，固有ベクトルを求めシステムの性質を調べる
 
@@ -95,7 +102,7 @@ A = T \Lambda T^{-1}
 \right]
 $$
 
-$T$を用いて状態変数を変換して$z = T^{-1}x$，(3)式の同値変換をすると
+$T$を用いて状態変数を変換して$z = T^{-1}x$，(3)式を同値変換すると
 $$
 T^{-1} \dot{x} = T^{-1}Ax = \Lambda T^{-1} x \\
 \dot{z} = \Lambda z \\
@@ -118,4 +125,4 @@ T^{-1} \dot{x} = T^{-1}Ax = \Lambda T^{-1} x \\
     \end{array}
 \right]
 $$
-ここで$z_1 = x_G - \frac{\dot{x_G}}{\omega}$は安定モード，$z_2 = x_G + \frac{\dot{x_G}}{\omega}$は不安定モードを示す．
+ここで$z_1 = x - \frac{\dot{x}}{\omega}$は安定モード，$z_2 = x + \frac{\dot{x}}{\omega}$は不安定モードを示す．
