@@ -5,19 +5,19 @@
 ## 重心の動力学
 $$
     m \ddot{p_G} = f_Z - mg \\
-    \dot{L} = \tau_Z - (p_G - p_Z) \times f_Z
+    \dot{L} = \tau_Z + (p_Z - p_G) \times f_Z
 $$
 
 ## 重心・ZMPモデル
 $f_Z$を消去して
 $$
-    \dot{L} = \tau_Z - (p_G - p_Z) \times (m \ddot{p}_G + mg)
+    \dot{L} = \tau_Z + (p_Z - p_G) \times (m \ddot{p}_G + mg)
 $$
 両辺に$n_Z$の外積をとって$，n_Z \times \tau_Z = 0$であることを用いて
 $$
-    n_Z \times \dot{L} = n_Z \times \tau_Z - n_Z \times (p_G - p_Z) \times (m \ddot{p}_G + mg) \\
-    n_Z \times \dot{L} + n_Z \times (p_G - p_Z) \times (m \ddot{p}_G + mg) =0 \\
-    n_Z \times \dot{L} + (n_Z \cdot (m\ddot{p}_G + mg))(p_G - p_Z) - (n_Z  \cdot (p_G - p_Z))(m\ddot{p}_G + mg) = 0 \\
+    n_Z \times \dot{L} = n_Z \times \tau_Z - n_Z \times (p_Z - p_G) \times (m \ddot{p}_G + mg) \\
+    n_Z \times \dot{L} = - n_Z \times (p_Z - p_G) \times (m \ddot{p}_G + mg)\\
+    n_Z \times \dot{L} = -(n_Z \cdot (m\ddot{p}_G + mg))(p_Z - p_G) + (n_Z  \cdot (p_Z - p_G))(m\ddot{p}_G + mg)\\
     m(\ddot{p}_G + g) = m\frac{n_Z \cdot (\ddot{p}_G + g)}{n_Z  \cdot (p_G - p_Z)}(p_G - p_Z) + \frac{n_Z \times \dot{L}}{n_Z  \cdot (p_G - p_Z)}
 $$
 ZMPは
@@ -53,7 +53,7 @@ $$
 \right] \\
 \omega = \sqrt{\frac{{\ddot{p}_G}_z + g_z}{{p_G}_z - {p_Z}_z}}
 $$
-
+なぜか左手系でのモデルになっている．右手系に適用させるには角運動量変化の符号を入れ替える
 
 ## 参考文献
 [[1] 水戸部和久，矢島克知，那須康雄："ゼロモーメント点の操作による歩行ロボットの制御"，日本ロボット学会誌，Vol.18，No.3，pp.359–365，2000.](https://www.jstage.jst.go.jp/article/jrsj1983/18/3/18_3_359/_article/-char/ja/)
