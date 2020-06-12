@@ -24,5 +24,36 @@ ZMPは
 $$
     p_Z = p_G - \frac{n_Z  \cdot (p_G - p_Z)}{n_Z \cdot (\ddot{p}_G + g)} (\ddot{p}_G + g) + \frac{n_Z \times \dot{L}}{m(n_Z \cdot (\ddot{p}_G + g))}
 $$
+
+すべての接触点が同一平面上にあるとき，$n_Z = [0\ 0\ 1]^{\rm T}$として
+
+$$
+\left[
+    \begin{array}{ccc}
+    {\ddot{p}_G}_x \\
+    {\ddot{p}_G}_y \\
+    {\ddot{p}_G}_z
+    \end{array}
+\right] 
+= \omega^2
+\left[
+    \begin{array}{lll}
+    ({p_G}_x - {p_Z}_x) - \frac{\dot{L}_y}{m({\ddot{p}_G}_z + g_z)}\\
+    ({p_G}_y - {p_Z}_y) + \frac{\dot{L}_x}{m({\ddot{p}_G}_z + g_z)}\\
+    ({p_G}_z - {p_Z}_z)
+    \end{array}
+\right]
++
+\left[
+    \begin{array}{ccc}
+    g_x \\
+    g_y \\
+    g_z
+    \end{array}
+\right] \\
+\omega = \sqrt{\frac{{\ddot{p}_G}_z + g_z}{{p_G}_z - {p_Z}_z}}
+$$
+
+
 ## 参考文献
 [[1] 水戸部和久，矢島克知，那須康雄："ゼロモーメント点の操作による歩行ロボットの制御"，日本ロボット学会誌，Vol.18，No.3，pp.359–365，2000.](https://www.jstage.jst.go.jp/article/jrsj1983/18/3/18_3_359/_article/-char/ja/)
