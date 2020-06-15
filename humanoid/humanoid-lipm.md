@@ -28,10 +28,10 @@ x(t) = \frac{1}{2}(x_0 + \frac{\dot{x}_0}{\omega}) e^{\omega t} + \frac{1}{2}(x_
  = x_0 {\rm cosh}(\omega t) + \frac{\dot{x}_0}{\omega} {\rm sinh}(\omega t)
 $$
 
-状態変数$x = [x \  \dot{x}]^T$として状態方程式は
+状態変数$X = [x \  \dot{x}]^T$として状態方程式は
 
 $$
-\dot{x} =
+\dot{X} =
 \left[
     \begin{array}{cc}
     \dot{x} \\
@@ -50,7 +50,7 @@ $$
     \dot{x} \\
     \end{array}
 \right] =
-Ax \tag{3}
+AX \tag{3}
 $$
 
 ## モデルの解析
@@ -104,8 +104,8 @@ $$
 
 $T$を用いて状態変数を変換して$z = T^{-1}x$，(3)式を同値変換すると
 $$
-T^{-1} \dot{x} = T^{-1}Ax = \Lambda T^{-1} x \\
-\dot{z} = \Lambda z \\
+T^{-1} \dot{X} = T^{-1}AX = \Lambda T^{-1} X \\
+\dot{Z} = \Lambda Z \\
 \left[
     \begin{array}{cc}
     \dot{z_1} \\
@@ -126,3 +126,37 @@ T^{-1} \dot{x} = T^{-1}Ax = \Lambda T^{-1} x \\
 \right]
 $$
 ここで$z_1 = x - \frac{\dot{x}}{\omega}$は安定モード，$z_2 = x + \frac{\dot{x}}{\omega}$は不安定モードを示す．
+
+## 軌道エネルギー
+
+(2)式の両辺に$\dot{x}$をかけると
+
+$$
+    \dot{x} \ddot{x} = \omega^2 \dot{x} x \\
+    \dot{x} \ddot{x} - \omega^2 \dot{x} x = 0 \\
+    \frac{\rm d}{{\rm d}t}(\frac{1}{2}(\dot{x}^2 - \omega^2 x^2)) = 0
+$$
+
+$E = \frac{1}{2}(\dot{x}^2 - \omega^2 x^2)$とすると
+$$
+    \frac{\rm d}{{\rm d}t}E = 0
+$$
+となるため，時間によらず変化しない値であり，この$E$を軌道エネルギーと呼ぶ
+
+### 軌道エネルギーを用いた計算例
+
+初期状態$X_0 = [x_0\ \dot{x}_0]^{\rm T}$として，質点が目標速度$\dot{x}_d$となる位置$x_1$を求める．
+
+各時点での軌道エネルギーは
+$$
+    E_0 = \frac{1}{2}(\dot{x}_0^2 - \omega^2 x_0^2) \\
+    E_1 = \frac{1}{2}(\dot{x}_d^2 - \omega^2 x_1^2) \\
+$$
+時間によらず軌道エネルギーは変化しないので，
+$$
+    E_0 = E_1 \\
+    \frac{1}{2}(\dot{x}_0^2 - \omega^2 x_0^2) = \frac{1}{2}(\dot{x}_d^2 - \omega^2 x_1^2) \\
+    \dot{x}_0^2 - \omega^2 x_0^2 = \dot{x}_d^2 - \omega^2 x_1^2 \\
+    x_1 = \pm \sqrt{x_0^2 + \frac{\dot{x}_d^2 - \dot{x}_0^2}{\omega^2}}
+$$
+
