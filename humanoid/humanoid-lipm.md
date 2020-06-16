@@ -141,7 +141,7 @@ $E = \frac{1}{2}(\dot{x}^2 - \omega^2 x^2)$とすると
 $$
     \frac{\rm d}{{\rm d}t}E = 0
 $$
-となるため，時間によらず変化しない値であり，この$E$を軌道エネルギーと呼ぶ
+となるため，$E$は時間によらず変化しない値であり，軌道エネルギーと呼ぶ
 
 ### 軌道エネルギーを用いた計算例
 
@@ -159,4 +159,9 @@ $$
     \dot{x}_0^2 - \omega^2 x_0^2 = \dot{x}_d^2 - \omega^2 x_1^2 \\
     x_1 = \pm \sqrt{x_0^2 + \frac{\dot{x}_d^2 - \dot{x}_0^2}{\omega^2}}
 $$
+
+## $\dot{X} = AX$の位相平面図
+
+$\omega = 1$のときの$\dot{X}=AX$の位相平面図を示す
+![lipm_phase_portrait](https://i.imgur.com/XnChnXp.png)
 
