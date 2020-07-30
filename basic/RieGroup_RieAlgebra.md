@@ -13,19 +13,12 @@ $$
     [\omega \times] = -R \dot{R}^{\rm T} = \dot{R} R^{\rm T} \\
     [\overline{\omega} \times] = - \dot{R}^{\rm T} R = R^{\rm T}\dot{R}
 $$
-$\dot{R} = [\omega \times] R$より(ロドリゲスの式の導出)
-$$
-    R(t) = {\rm exp}([\omega \times]t) R(0)
-$$
-$\dot{R} = R [\overline{\omega}\times]$より
-$$
-    R(t) = R(0) {\rm exp}([\overline{\omega} \times]t)
-$$
-また$\omega$と$\overline{\omega}$の関係は
+$\omega$と$\overline{\omega}$の関係は
 $$
     [\omega \times] = R [\overline{\omega} \times] R^{\rm T} \\
     [\overline{\omega} \times] = R^{\rm T} [\omega \times] R
 $$
+### $\omega$ と $\overline{\omega}$の変換
 任意のベクトル$q,p$について，$x = Rp$として
 $$
     [(R q)\times] R p = R ([q \times] p) \\
@@ -43,4 +36,13 @@ $$
 と${\rm Ad}_{R^{-1}}=R^{\rm T}$をもちいて
 $$
     {\rm Ad}_{R^{-1}}\omega = \overline{\omega}
+$$
+### 行列微分方程式
+$\dot{R} = [\omega \times] R$より(ロドリゲスの式の導出へつながる)
+$$
+    R(t) = {\rm exp}([\omega \times]t) R(0)
+$$
+$\dot{R} = R [\overline{\omega}\times]$より
+$$
+    R(t) = R(0) {\rm exp}([\overline{\omega} \times]t)
 $$
