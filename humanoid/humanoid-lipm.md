@@ -28,7 +28,7 @@ x(t) = \frac{1}{2}(x_0 + \frac{\dot{x}_0}{\omega}) e^{\omega t} + \frac{1}{2}(x_
  = x_0 {\rm cosh}(\omega t) + \frac{\dot{x}_0}{\omega} {\rm sinh}(\omega t)
 $$
 
-状態変数$X = [x \  \dot{x}]^T$として状態方程式は
+状態変数$X = [x \ \dot{x}]^T$として状態方程式は
 
 $$
 \dot{X} =
@@ -157,11 +157,15 @@ $$
     E_0 = E_1 \\
     \frac{1}{2}(\dot{x}_0^2 - \omega^2 x_0^2) = \frac{1}{2}(\dot{x}_d^2 - \omega^2 x_1^2) \\
     \dot{x}_0^2 - \omega^2 x_0^2 = \dot{x}_d^2 - \omega^2 x_1^2 \\
-    x_1 = \pm \sqrt{x_0^2 + \frac{\dot{x}_d^2 - \dot{x}_0^2}{\omega^2}}
+    x_1 = \pm \sqrt{ \frac{\omega^2x_0^2 -(\dot{x}_0^2 - \dot{x}_d^2)}{\omega^2}}
 $$
 
 ## $\dot{X} = AX$の位相平面図
 
-$\omega = 1$のときの$\dot{X}=AX$の位相平面図を示す
-![lipm_phase_portrait](https://i.imgur.com/XnChnXp.png)
+$\omega = 1$のときの$\dot{X}=AX$の位相平面図を示す.
 
+![lipm_phase_portrait](https://i.imgur.com/t3wlf0X.png)
+
+ここで，軌道エネルギー$E = \frac{1}{2}(\dot{x}^2 - \omega^2 x^2)$の符号によって図の領域を区切ることができる．
+
+例えば$x < 0$，$\dot{x} > 0$の第二象限に状態が置かれているときに，$E > 0$であれば$x=0$を超えることができるが，$E < 0$であると$x=0$を超えることができない．
