@@ -2,15 +2,15 @@
 # Capture Point
 ## Capture Pointの導出
 「ヒューマノイドが自身を停止させる為の着地点」として定義された点をCapture Pointと呼ばれ,
-心・ZMPモデル
+重心・ZMPモデル
 $$
     \ddot{x_{\rm G}} = \omega^2({x_{\rm G} - x_{\rm Z}}) \tag{1}
 $$
-の解析解から求まる．倒立振子の支持脚(ZMP)が動かない時$x_{\rm Z}(t) = x_{\rm Z}(0) = x_{{\rm Z},0}$の時,(1)式の解は
+から求まる．倒立振子の支持脚(ZMP)が動かない時$x_{\rm Z}(t) = x_{\rm Z}(0) = x_{{\rm Z},0}$の時,(1)式の一般解は
 $$
     x_{\rm G}(t) = A_1 {\rm e}^{-\omega t} +  A_2 {\rm e}^{\omega t} + x_{{\rm Z},0} \ (A_1, A_2 = {\rm const})
 $$
-$x_{\rm G}(0) = x_{{\rm G},0}$，$\dot{x_{\rm G}(0)} = \dot{x_{{\rm G},0}}$とすると
+$x_{\rm G}(0) = x_{{\rm G},0}$，$\dot{x_{\rm G}(0)} = \dot{x_{{\rm G},0}}$の時
 $$
     x_{\rm G}(t) 
     = \frac{1}{2}(x_{{\rm G},0} - \frac{\dot{x_{{\rm G},0}}}{\omega} -x_{{\rm Z},0}) {\rm e}^{-\omega t} 
@@ -205,11 +205,11 @@ $$
 $$
     \dot{\xi} = \omega(\xi - x_{\rm Z}) \tag{10}
 $$
-とCapture Pointのダイナミクスを示す．(9)式より重心はCapture Pointを追従するため，Capture Pointを安定化すれば重心も間接的に安定化される．$x_{\rm Z}$の時，(10)の解析解は
+とCapture Pointのダイナミクスを示す．(9)式より重心はCapture Pointを追従するため，Capture Pointを安定化すれば重心も間接的に安定化される．$x_{\rm Z}$の時，(10)の一般解は
 $$
     \xi(t) = B_1 {\rm e}^{\omega t} + x_{\rm Z} \ (B_1 = {\rm const})
 $$
-$\xi(0) = \xi_0$として
+$\xi(0) = \xi_0$の時
 $$
     \xi(t) = (\xi_0 - x_{\rm Z}) {\rm e}^{\omega t} + x_{\rm Z} \tag{11}
 $$
